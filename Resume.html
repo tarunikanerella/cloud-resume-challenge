@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nerella Venkata Tarunika – Resume</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #111111;
+    --dark:  #2a2a2a;
+    --mid:   #555555;
+    --light: #999999;
+    --rule:  #cccccc;
+    --bg:    #ffffff;
+    --page-w: 210mm;
+    --page-h: 297mm;
+    --pad-x: 18mm;
+    --pad-y: 14mm;
+  }
+
+  body {
+    background: #e0e0e0;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 10.5pt;
+    color: var(--dark);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: var(--page-w);
+    min-height: var(--page-h);
+    background: var(--bg);
+    margin: 20px auto;
+    padding: var(--pad-y) var(--pad-x);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 22pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  .contact {
+    display: flex;
+    gap: 18px;
+    margin-top: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 7.8pt;
+    color: var(--mid);
+  }
+
+  /* ── SUMMARY ── */
+  .summary {
+    font-size: 10pt;
+    color: var(--dark);
+    line-height: 1.55;
+    margin-bottom: 14px;
+    border-left: 2px solid var(--rule);
+    padding-left: 10px;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    margin-bottom: 13px;
+  }
+
+  section h2 {
+    font-family: 'DM Mono', monospace;
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--light);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* ── EXPERIENCE ENTRY ── */
+  .entry {
+    margin-bottom: 10px;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .entry-header .org {
+    font-weight: 600;
+    font-size: 11pt;
+    color: var(--black);
+  }
+
+  .entry-header .date {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--light);
+    white-space: nowrap;
+  }
+
+  .project-title {
+    font-style: italic;
+    color: var(--mid);
+    font-size: 10pt;
+    margin-top: 1px;
+  }
+
+  .tech-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.2pt;
+    color: var(--light);
+    margin: 2px 0 4px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  ul li {
+    padding-left: 12px;
+    position: relative;
+    color: var(--dark);
+    line-height: 1.5;
+    margin-bottom: 2px;
+    font-size: 10pt;
+  }
+
+  ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--light);
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px 24px;
+  }
+
+  .skill-row {
+    display: flex;
+    gap: 6px;
+    font-size: 9.8pt;
+    line-height: 1.5;
+  }
+
+  .skill-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--light);
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+
+  .skill-value {
+    color: var(--dark);
+  }
+
+  /* ── EDUCATION ── */
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .edu-row .degree {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 10.5pt;
+  }
+
+  .edu-row .date {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--light);
+  }
+
+  .edu-sub {
+    display: flex;
+    justify-content: space-between;
+    color: var(--mid);
+    font-size: 9.8pt;
+    margin-top: 1px;
+  }
+
+  /* ── PROJECTS ── */
+  .project-entry {
+    margin-bottom: 8px;
+  }
+
+  .project-name {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 10.5pt;
+  }
+
+  /* ── ACHIEVEMENTS & LANGUAGES ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+  }
+
+  .inline-list {
+    font-size: 10pt;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .cert-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 10pt;
+  }
+
+  .cert-row .cert-name { color: var(--dark); }
+  .cert-row .cert-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 7.5pt;
+    color: var(--light);
+  }
+
+  @media print {
+    body { background: none; }
+    .page { margin: 0; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <h1>Nerella Venkata Tarunika</h1>
+    <div class="contact">
+      <span>+91 6364949994</span>
+      <span>taru.nerella@gmail.com</span>
+      <span>Bangalore, India</span>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <p class="summary">
+    Software developer with 2+ years of experience building secure, high-performance applications using Java and Spring Boot. Skilled in designing RESTful APIs, deploying containerised microservices on AWS (EKS), and integrating backend systems with frontend dashboards. Experienced in delivering reliable, production-ready solutions with additional exposure to monitoring, observability, and data visualisation tools.
+  </p>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-row"><span class="skill-label">Languages</span><span class="skill-value">Java, Python</span></div>
+      <div class="skill-row"><span class="skill-label">Databases</span><span class="skill-value">MySQL, PostgreSQL</span></div>
+      <div class="skill-row"><span class="skill-label">Frameworks</span><span class="skill-value">Spring Boot, React.js</span></div>
+      <div class="skill-row"><span class="skill-label">Tools</span><span class="skill-value">Prometheus, Grafana, Power BI, AWS</span></div>
+      <div class="skill-row"><span class="skill-label">OS</span><span class="skill-value">Linux, Windows</span></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2>Education</h2>
+    <div class="edu-row">
+      <span class="degree">PES University, Bangalore</span>
+      <span class="date">Aug 2019 – May 2023</span>
+    </div>
+    <div class="edu-sub">
+      <span>B.Tech – Computer Science and Engineering</span>
+      <span>9.01 CGPA</span>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section>
+    <h2>Professional Experience</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="org">Software Engineer — NatWest Digital Services</span>
+        <span class="date">Jul 2023 – Present</span>
+      </div>
+
+      <div style="margin-top:6px;">
+        <div class="project-title">Bankline – Digital Mandates</div>
+        <div class="tech-tag">Spring Boot · Amazon EKS</div>
+        <ul>
+          <li>Developed functionality in NWG's digital banking platform (Bankline) enabling business customers to manage accounts, payments, transactions, mandates, and more.</li>
+          <li>Designed secure, scalable APIs and deployed containerised microservices on Amazon EKS while proactively resolving bugs and security vulnerabilities.</li>
+          <li>Participated in design discussions, code reviews, and agile ceremonies; took ownership of features from planning through deployment.</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:7px;">
+        <div class="project-title">Carbon Footprint Tracker – Carbon Planner</div>
+        <div class="tech-tag">Spring Boot · PostgreSQL</div>
+        <ul>
+          <li>Built a web application to estimate carbon footprints from user spending across categories, with goal-setting and personalised recommendations to support reduction efforts.</li>
+          <li>Designed secure APIs and addressed bugs and vulnerabilities to ensure high reliability and data integrity.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="org">Graduate Engineer Trainee (Intern) — Kimberly-Clark</span>
+        <span class="date">Jan 2023 – Jun 2023</span>
+      </div>
+      <div style="margin-top:6px;">
+        <div class="project-title">UI Development using Streamlit · eCommerce Diagnostics</div>
+        <div class="tech-tag">Streamlit · Power BI</div>
+        <ul>
+          <li>Developed a Streamlit-based UI to surface ML-driven predictive sales analysis for the business team, visualising impact on sales trends.</li>
+          <li>Created a Power BI dashboard consolidating Amazon and Flipkart KPIs, enabling root-cause analysis at the SKU level across two time periods.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="org">Trainee Intern — NatWest Digital Services</span>
+        <span class="date">Jun 2022 – Jul 2022</span>
+      </div>
+      <div style="margin-top:6px;">
+        <div class="project-title">Product Control</div>
+        <div class="tech-tag">Spring Boot · Prometheus · Grafana</div>
+        <ul>
+          <li>Implemented end-to-end monitoring and observability using Prometheus and Grafana for performance analysis of servers, applications, and logs.</li>
+          <li>Metrics data fed the AIOps framework to generate key patterns and insights for the production support team's real-time response.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC / PERSONAL PROJECTS -->
+  <section>
+    <h2>Academic &amp; Personal Projects</h2>
+
+    <div class="project-entry">
+      <div class="project-name">Event Connect – Personality Quiz Platform</div>
+      <div class="tech-tag">React.js · Spring Boot</div>
+      <p style="font-size:9.8pt;color:#555;line-height:1.5;">Web application for a community event featuring a swipe-based quiz and a custom algorithm generating each user's top 3 matches with compatibility percentages.</p>
+    </div>
+
+    <div class="project-entry">
+      <div class="project-name">Quant-Trends – Trading Analysis</div>
+      <div class="tech-tag">React.js · Spring Boot</div>
+      <p style="font-size:9.8pt;color:#555;line-height:1.5;">Tool that processes uploaded price charts or Excel data to extract technical indicators and assess market trends. Integrated OpenAI's API to provide buy/sell/wait suggestions and review trading history for ineffective decisions.</p>
+    </div>
+
+    <div class="project-entry">
+      <div class="project-name">Data Analysis of Housing Market</div>
+      <div class="tech-tag">Python · numpy · pandas · seaborn · matplotlib · scipy</div>
+      <p style="font-size:9.8pt;color:#555;line-height:1.5;">Exploratory data analysis, standardisation, normalisation, hypothesis testing, and correlation analysis on Melbourne housing data. Final project for Statistics for Data Science (Semester 3).</p>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <h2>Certifications</h2>
+    <div class="cert-row">
+      <span class="cert-name">AWS Certified Developer-Associate</span>
+      <span class="cert-date">May 2026 – May 2029</span>
+    </div>
+    <div class="cert-row">
+      <span class="cert-name">AWS Certified Cloud Practitioner</span>
+      <span class="cert-date">Jul 2025 – Jul 2028</span>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS & LANGUAGES -->
+  <section>
+    <h2>Achievements &amp; Languages</h2>
+    <div class="two-col">
+      <div>
+        <ul>
+          <li>Awarded best project during internship at Kimberly-Clark.</li>
+          <li>MRD Scholarships – PES University Scholarship for Academic Excellence.</li>
+          <li>NTSE Scholarship – Ranked 9th at state level in NTSE.</li>
+        </ul>
+      </div>
+      <div style="padding-top:2px;">
+        <p class="inline-list">English <span style="color:#aaa">[Fluent]</span> &nbsp;·&nbsp; Telugu <span style="color:#aaa">[Native]</span> &nbsp;·&nbsp; Hindi <span style="color:#aaa">[Proficient]</span></p>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
