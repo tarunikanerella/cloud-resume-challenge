@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<p>Visitor count: <span id="visitor-count"></span></p>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -407,5 +408,21 @@
   </section>
 
 </div>
+
+<script>
+  async function fetchVisitorCount() {
+    try {
+      const response = await fetch('https://ph6zw69gvk.execute-api.ap-south-1.amazonaws.com/count');
+      if (!response.ok) throw new Error('Network response was not ok');
+      const count = await response.text();
+      document.getElementById('visitor-count').textContent = count.trim();
+    } catch (error) {
+      console.error('Failed to fetch visitor count:', error);
+      document.getElementById('visitor-count').textContent = 'N/A';
+    }
+  }
+
+  fetchVisitorCount();
+</script>
 </body>
 </html>
